@@ -1,0 +1,65 @@
+.droppable-elements {
+  width: 100%;
+  &-df {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    
+  }
+  &_fexed {
+    display: flex;
+    width: 50%;
+  }
+  
+}
+.draggable-elements {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+.droppable {
+  min-width: 135px;
+  height: 25px;
+  margin: 0 5px;
+  border: 0.5px solid #aaaaaa;
+  text-align: center;
+  border-radius: 5px;
+  background:#aaaaaa77;
+  &_wh250 {
+    width: 202px;
+    height: 200px;
+    background: center center / cover no-repeat;
+    justify-content: space-around;
+  }
+  
+}
+
+.draggable{
+  min-width: 135px;
+  height: 25px;
+  border: 0.5px solid #aaaaaa;
+  text-align: center;
+  border-radius: 5px;
+  background:#aaaaaa77;
+  &_w250 {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    background: #aaaaaad4;
+  }
+  &_pd10 {
+    padding: 0 10px;
+  }
+}
+
+.draggable {
+  cursor: move;
+}
+
+// .droppable {
+//   background-color: ;
+// }

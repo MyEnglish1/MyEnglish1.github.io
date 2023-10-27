@@ -1,0 +1,62 @@
+@media (max-width: 1200px) {
+  .stages__item {
+    width: 40%;
+  }
+}
+@media (max-width: 991px) {
+  .stages__content {
+    padding: 40px 10px;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+@media (max-width: 767px) {
+  .lesson__header {
+    padding: 15px;
+  }
+  .lesson_title {
+    font-size: 18px;
+  }
+
+  .promo__item {
+    width: 90%;
+  }
+
+  .stages__subtitle {
+    font-size: 18px;
+    text-align: center;
+  }
+  .stages__item {
+    width: 90%;
+  }
+  .stages__item_wrap {
+    margin-top: 60px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .stages__item_content {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .stages__item_audio {
+    margin-right: 0;
+  }
+  .stages__descr {
+    text-align: center;
+    font-size: 16px;
+  }
+  .stages__wrapper {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .lesson__header {
+    padding: 15px;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

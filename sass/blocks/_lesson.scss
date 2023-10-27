@@ -1,0 +1,27 @@
+.lesson {
+    &__header {
+        height: 80px;
+        background: url(../img/bg_header2.png) 50% 0 repeat-x,url(../img/bg_header.jpg) 50% 100%/cover no-repeat;
+        padding: 30px 50px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        left: 0;
+        box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+        // box-shadow: 10px 8px 16px rgba(0,0,0,0.55);
+        &_wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        &_title {
+            font-size: 20px;
+            line-height: 20px;
+            color: #000;
+            cursor: pointer;
+        }
+        &_lang {
+            display: flex;
+        }
+    }
+}

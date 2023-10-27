@@ -1,0 +1,35 @@
+.promo {
+  margin-top: 80px;
+}
+.promo__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+.promo__item {
+  position: relative;
+  margin-top: 30px;
+  width: 45%;
+  height: 300px;
+  background: #fff;
+  background: center center/cover no-repeat;
+  box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.55);
+}
+.promo__item_link {
+  display: block;
+  background: #000000a4;
+  min-height: 60px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 20px;
+  color: #fff;
+}
+.promo__item_link:hover {
+  text-decoration: none;
+  color: #fff;
+}

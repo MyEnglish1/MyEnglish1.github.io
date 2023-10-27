@@ -1,0 +1,40 @@
+.card {
+   
+    padding: 50px 20px;
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    color: white;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
+    border-radius: 2%;
+    &:hover {
+      transform: rotateY(0.5turn);
+    }
+
+    .card__face {
+      padding: 50px 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: 1s ease-in-out;
+        // linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+        background: #275246fb;
+        background: url('../img/bg_card.jpg') center center / cover no-repeat;
+        border-radius: 2%;
+        
+
+      &--back {
+        padding: 20px;
+        transform: rotateY(0.5turn);
+        display: flex;
+        flex-direction: column;
+        border-radius: 2%;
+      }
+    }
+  }

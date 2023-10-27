@@ -1,0 +1,61 @@
+.swiper {
+    // margin-top: 15%;
+    height: 400px;
+    &-wrapper {
+        padding: 20px 0;
+    }
+    &-slide {
+        
+        // height: 50vh;
+    }
+}
+
+
+.swiper-pagination-fraction {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #171717;
+}
+
+.swiper-pagination-total {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: #171717;
+    
+}
+.swiper-pagination, .swiper-pagination-fraction, .swiper-pagination-horizontal {
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+.swiper-button-next {
+    position: absolute;
+    top: 95%;
+    right: 42%;
+    z-index: 10;
+    background: url(../img/next.png) center center / contain no-repeat;
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    white-space: nowrap;
+}
+.swiper-button-prev {
+    position: absolute;
+    z-index: 10;
+    background: url(../img/prev.png) center center / contain no-repeat;
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    top: 95%;
+    left: 42%;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+    content: none;
+}

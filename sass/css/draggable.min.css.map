@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../blocks/draggable.scss"
+    ],
+    "names": [],
+    "file": "draggable.min.css"
+}
