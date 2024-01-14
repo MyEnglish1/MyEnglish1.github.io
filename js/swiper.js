@@ -117,7 +117,7 @@ Array.from(playButtons).forEach(function(button) {
         utterance.lang = 'en-GB'; // Установим язык речи на британский английский
 
         utterance.voice = speechSynthesis.getVoices().find(function(voice) {
-            return voice.lang === 'en-GB' && voice.gender === 'male';
+            return voice.lang === 'en-GB' && voice.gender === 'female';
         }); // Установим голос на британский мужской
 
         utterance.rate = 1; // Установим скорость речи
