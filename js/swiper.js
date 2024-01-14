@@ -1,8 +1,6 @@
 
 
 
-
-
 const swiper = new Swiper('.swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
@@ -51,51 +49,61 @@ const swiper = new Swiper('.swiper', {
 });
 
 
-// window.addEventListener('load', function() {
-//   var swiperWrapper = document.querySelector('.swiper-wrapper');
-//   var swiperSlides = document.querySelectorAll('.swiper-slide');
-  
-//   var randomizeSlides = function() {
-//     Array.prototype.forEach.call(swiperSlides, function(slide) {
-//       swiperWrapper.removeChild(slide);
+
+
+
+// // Старый код речи. не устраивает произношение. Сначала получим ссылку на кнопку
+// var playButtons = document.getElementsByClassName('button');
+
+// // Затем назначим обработчик события 'click' для каждой кнопки
+// Array.from(playButtons).forEach(function(button) {
+//     button.addEventListener('click', function() {
+//         // Найдем родительский элемент кнопки (карточку)
+//         var card = button.closest('.card');
+
+//         // Найдем блок с текстом на английском языке
+//         var textBlock = card.querySelector('.stages__item_content_en');
+
+//         // Получим текст из блока
+//         var text = textBlock.innerText;
+
+//         // Создадим новый объект SpeechSynthesisUtterance с текстом
+//         var utterance = new SpeechSynthesisUtterance(text);
+
+//         // Установим язык речи на английский
+//         utterance.lang = 'en-US';
+
+//         // Вызовем Text-to-Speech API для воспроизведения речи
+//         window.speechSynthesis.speak(utterance);
 //     });
-    
-//     var randomOrder = Array.from(swiperSlides).sort(function() {
-//       return 0.5 - Math.random();
-//     });
-    
-//     randomOrder.forEach(function(slide) {
-//       swiperWrapper.appendChild(slide);
-//     });
-//   };
-  
-//   randomizeSlides();
 // });
 
 
 
-// Сначала получим ссылку на кнопку
+
+
 var playButtons = document.getElementsByClassName('button');
 
-// Затем назначим обработчик события 'click' для каждой кнопки
 Array.from(playButtons).forEach(function(button) {
     button.addEventListener('click', function() {
-        // Найдем родительский элемент кнопки (карточку)
         var card = button.closest('.card');
-
-        // Найдем блок с текстом на английском языке
         var textBlock = card.querySelector('.stages__item_content_en');
-
-        // Получим текст из блока
         var text = textBlock.innerText;
 
-        // Создадим новый объект SpeechSynthesisUtterance с текстом
         var utterance = new SpeechSynthesisUtterance(text);
 
-        // Установим язык речи на английский
-        utterance.lang = 'en-US';
+        utterance.lang = 'en-GB'; // Установим язык речи на британский английский
 
-        // Вызовем Text-to-Speech API для воспроизведения речи
+        utterance.voice = speechSynthesis.getVoices().find(function(voice) {
+            return voice.lang === 'en-GB' && voice.gender === 'male';
+        }); // Установим голос на британский мужской
+
+        utterance.rate = 1.1; // Установим скорость речи
+
+        utterance.pitch = 1; // Установим тон речи
+
+        utterance.volume = 1; // Установим громкость
+
         window.speechSynthesis.speak(utterance);
     });
 });
