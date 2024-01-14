@@ -26,6 +26,8 @@ const swiper = new Swiper('.swiper', {
   // кол-во дублирующих слайдов
   // loopedSlides:3,
   // скорость прокрутки
+
+  
   speed: 1600,
   // автопрокрутка
   // autoplay: {
@@ -38,14 +40,34 @@ const swiper = new Swiper('.swiper', {
   // },
 
   breakpoints: {
-    765: {
-      slidesPerView: 3,
-    },
+  
     320: {
       slidesPerView: 1,
     },
 
+    480: {
+      slidesPerView: 2,
+    },
+
+    1200: {
+      slidesPerView: 3,
+    },
+
   },
+
+  mousewheel: {
+    sensitivity: 1,
+    
+  },
+
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+    pageUpDown: true,
+  },
+
+  
+
 });
 
 
