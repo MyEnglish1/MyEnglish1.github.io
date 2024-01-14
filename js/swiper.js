@@ -120,11 +120,11 @@ Array.from(playButtons).forEach(function(button) {
             return voice.lang === 'en-GB' && voice.gender === 'male';
         }); // Установим голос на британский мужской
 
-        utterance.rate = 1; // Установим скорость речи
+        utterance.rate = 0.9; // Установим скорость речи
 
         utterance.pitch = 1; // Установим тон речи
 
-        utterance.volume = 1; // Установим громкость
+        //utterance.volume = 1; // Установим громкость
 
         window.speechSynthesis.speak(utterance);
     });
