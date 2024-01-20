@@ -72,38 +72,6 @@ const swiper = new Swiper('.swiper', {
 
 
 
-
-
-// // Старый код речи. не устраивает произношение. Сначала получим ссылку на кнопку
-// var playButtons = document.getElementsByClassName('button');
-
-// // Затем назначим обработчик события 'click' для каждой кнопки
-// Array.from(playButtons).forEach(function(button) {
-//     button.addEventListener('click', function() {
-//         // Найдем родительский элемент кнопки (карточку)
-//         var card = button.closest('.card');
-
-//         // Найдем блок с текстом на английском языке
-//         var textBlock = card.querySelector('.stages__item_content_en');
-
-//         // Получим текст из блока
-//         var text = textBlock.innerText;
-
-//         // Создадим новый объект SpeechSynthesisUtterance с текстом
-//         var utterance = new SpeechSynthesisUtterance(text);
-
-//         // Установим язык речи на английский
-//         utterance.lang = 'en-US';
-
-//         // Вызовем Text-to-Speech API для воспроизведения речи
-//         window.speechSynthesis.speak(utterance);
-//     });
-// });
-
-
-
-
-
 var playButtons = document.getElementsByClassName('button');
 
 Array.from(playButtons).forEach(function(button) {
@@ -112,23 +80,38 @@ Array.from(playButtons).forEach(function(button) {
         var textBlock = card.querySelector('.stages__item_content_en');
         var text = textBlock.innerText;
 
+        var repeatCount = 10; // Количество повторений
+        var delay = 2500; // Задержка в миллисекундах между повторениями
+
         var utterance = new SpeechSynthesisUtterance(text);
 
         utterance.lang = 'en-GB'; // Установим язык речи на британский английский
 
         utterance.voice = speechSynthesis.getVoices().find(function(voice) {
-            return voice.lang === 'en-GB' && voice.gender === 'female';
+            return voice.lang === 'en-GB' && voice.gender === 'male';
         }); // Установим голос на британский мужской
 
-        utterance.rate = 1; // Установим скорость речи
+        utterance.rate = 0.9; // Установим скорость речи
 
         utterance.pitch = 1; // Установим тон речи
 
-        //utterance.volume = 1; // Установим громкость
+        utterance.volume = 1; // Установим громкость
 
-        window.speechSynthesis.speak(utterance);
+        var repeat = function(count) {
+            if (count <= 0) return;
+            
+            window.speechSynthesis.speak(utterance);
+            
+            setTimeout(function() {
+                repeat(count - 1);
+            }, delay);
+        };
+
+        repeat(repeatCount);
     });
 });
+
+
 
 
 
