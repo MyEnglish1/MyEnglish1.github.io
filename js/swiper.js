@@ -66,50 +66,189 @@ const swiper = new Swiper('.swiper', {
     pageUpDown: true,
   },
 
-  
-
 });
-
-
 
 var playButtons = document.getElementsByClassName('button');
 
 Array.from(playButtons).forEach(function(button) {
     button.addEventListener('click', function() {
-        var card = button.closest('.card');
-        var textBlock = card.querySelector('.stages__item_content_en');
-        var text = textBlock.innerText;
-
-        var repeatCount = 10; // Количество повторений
-        var delay = 2500; // Задержка в миллисекундах между повторениями
-
-        var utterance = new SpeechSynthesisUtterance(text);
-
-        utterance.lang = 'en-GB'; // Установим язык речи на британский английский
-
-        utterance.voice = speechSynthesis.getVoices().find(function(voice) {
-            return voice.lang === 'en-GB' && voice.gender === 'male';
-        }); // Установим голос на британский мужской
-
-        utterance.rate = 0.9; // Установим скорость речи
-
-        utterance.pitch = 1; // Установим тон речи
-
-        utterance.volume = 1; // Установим громкость
-
-        var repeat = function(count) {
-            if (count <= 0) return;
+        if (button.classList.contains('button__stop')) {
+            button.textContent = 'Play';
+            button.classList.remove('button__stop');
+            window.speechSynthesis.cancel(); // Stop speech synthesis
+        } else {
+            button.textContent = 'Stop';
+            button.classList.add('button__stop');
             
-            window.speechSynthesis.speak(utterance);
-            
-            setTimeout(function() {
-                repeat(count - 1);
-            }, delay);
-        };
+            var card = button.closest('.card');
+            var textBlock = card.querySelector('.stages__item_content_en');
+            var text = textBlock.innerText;
 
-        repeat(repeatCount);
+            var delay = 2500; // Задержка в миллисекундах между повторениями
+
+            var utterance = new SpeechSynthesisUtterance(text);
+
+            utterance.lang = 'en-GB'; // Установим язык речи на британский английский
+
+            utterance.voice = speechSynthesis.getVoices().find(function(voice) {
+                return voice.lang === 'en-GB' && voice.gender === 'male';
+            }); // Установим голос на британский мужской
+
+            utterance.rate = 0.9; // Установим скорость речи
+
+            utterance.pitch = 1; // Установим тон речи
+
+            utterance.volume = 1; // Установим громкость
+
+            var updateRepeatCount = function() {
+                var rangeInput = document.getElementById('replay');
+                var output = document.querySelector('output[for="replay"]');
+                var count = parseInt(rangeInput.value);
+                output.textContent = count;
+                return count;
+            };
+
+            var repeat = function(count) {
+                if (count <= 0) return;
+                
+                if (button.classList.contains('button__stop')) {
+                    window.speechSynthesis.speak(utterance);
+                    setTimeout(function() {
+                        repeat(count - 1);
+                    }, delay);
+                }
+            };
+
+            var panel = document.createElement('div');
+            panel.className = 'panel';
+            panel.innerHTML = `
+              <label for="replay">Повторений</label>
+              <input id="replay" type="range" min="1" max="10" step="1" value="1">
+              <output for="replay">1</output>
+            `;
+            document.body.appendChild(panel);
+
+            var rangeInput = panel.querySelector('input');
+            var output = panel.querySelector('output');
+
+            rangeInput.addEventListener('input', function() {
+                var count = updateRepeatCount();
+            });
+
+            updateRepeatCount(); // Initialize repeatCount
+
+            repeat(updateRepeatCount());
+        }
     });
 });
+
+
+// var playButtons = document.getElementsByClassName('button');
+
+// Array.from(playButtons).forEach(function(button) {
+//     button.addEventListener('click', function() {
+//         var card = button.closest('.card');
+//         var textBlock = card.querySelector('.stages__item_content_en');
+//         var text = textBlock.innerText;
+        
+//         var delay = 2500; // Задержка в миллисекундах между повторениями
+
+//         var utterance = new SpeechSynthesisUtterance(text);
+
+//         utterance.lang = 'en-GB'; // Установим язык речи на британский английский
+
+//         utterance.voice = speechSynthesis.getVoices().find(function(voice) {
+//             return voice.lang === 'en-GB' && voice.gender === 'male';
+//         }); // Установим голос на британский мужской
+
+//         utterance.rate = 0.9; // Установим скорость речи
+
+//         utterance.pitch = 1; // Установим тон речи
+
+//         utterance.volume = 1; // Установим громкость
+
+//         var updateRepeatCount = function() {
+//             var rangeInput = document.getElementById('replay');
+//             var output = document.querySelector('output[for="replay"]');
+//             var count = parseInt(rangeInput.value);
+//             output.textContent = count;
+//             return count;
+//         };
+
+//         var repeat = function(count) {
+//             if (count <= 0) return;
+            
+//             window.speechSynthesis.speak(utterance);
+            
+//             setTimeout(function() {
+//                 repeat(count - 1);
+//             }, delay);
+//         };
+
+//         var panel = document.createElement('div');
+//         panel.className = 'panel';
+//         panel.innerHTML = `
+//           <label for="replay">Повторений</label>
+//           <input id="replay" type="range" min="1" max="10" step="1" value="1">
+//           <output for="replay">1</output>
+//         `;
+//         document.body.appendChild(panel);
+
+//         var rangeInput = panel.querySelector('input');
+//         var output = panel.querySelector('output');
+
+//         rangeInput.addEventListener('input', function() {
+//           var count = updateRepeatCount();
+//           repeatCount = count;
+//         });
+
+//         var repeatCount = updateRepeatCount();
+
+//         repeat(repeatCount);
+//     });
+// });
+
+
+// // var playButtons = document.getElementsByClassName('button');
+
+// // Array.from(playButtons).forEach(function(button) {
+// //     button.addEventListener('click', function() {
+// //         var card = button.closest('.card');
+// //         var textBlock = card.querySelector('.stages__item_content_en');
+// //         var text = textBlock.innerText;
+
+// //         var repeatCount = 10; // Количество повторений
+// //         var delay = 2500; // Задержка в миллисекундах между повторениями
+
+// //         var utterance = new SpeechSynthesisUtterance(text);
+
+// //         utterance.lang = 'en-GB'; // Установим язык речи на британский английский
+
+// //         utterance.voice = speechSynthesis.getVoices().find(function(voice) {
+// //             return voice.lang === 'en-GB' && voice.gender === 'male';
+// //         }); // Установим голос на британский мужской
+
+// //         utterance.rate = 0.9; // Установим скорость речи
+
+// //         utterance.pitch = 1; // Установим тон речи
+
+// //         utterance.volume = 1; // Установим громкость
+
+// //         var repeat = function(count) {
+// //             if (count <= 0) return;
+            
+// //             window.speechSynthesis.speak(utterance);
+            
+// //             setTimeout(function() {
+// //                 repeat(count - 1);
+// //             }, delay);
+// //         };
+
+// //         repeat(repeatCount);
+// //     });
+// // });
+
+
 
 
 
