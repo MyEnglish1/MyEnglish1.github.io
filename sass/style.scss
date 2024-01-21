@@ -8,7 +8,8 @@
 }
 .container {
     margin: 0 auto;
-    max-width: 1200px; 
+    max-width: 1240px; 
+    padding: 0 20px;
     &__center {
         display: flex;
         align-items: center;
@@ -42,7 +43,8 @@ a {
 @import 'blocks/move'; 
 @import 'blocks/card';
 @import 'blocks/wrapper';
-// @import 'blocks/game';
+@import 'blocks/panel';
+
 
 
 

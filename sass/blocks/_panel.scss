@@ -1,0 +1,22 @@
+.panel {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000;
+    color:  #000 !important;
+    label {
+        margin-bottom: 10px;
+        display: block;
+        color:  #000 !important;  
+    }
+    output {
+        margin-top: 10px;
+        display: block;
+        color: #000 !important;
+    }
+    
+    
+}

@@ -16,6 +16,12 @@
     // .card {
     //     width: 45%;
     // }
+    .swiper-button-next {
+        right: 36%;
+    }
+    .swiper-button-prev {
+        left: 36%;
+    }
     
     
 }
@@ -48,7 +54,6 @@
             }
             &_content {
                 width: 100%;
-                margin-top: 20px;
             }
             &_audio {
                 margin-right: 0;
@@ -63,16 +68,19 @@
             margin-top: 30px;
         }
     }
+    
    
     
 }
 @media (max-width: 576px) {
+    
     .lesson {
         &__header {
-            bottom: 0;
-            top: auto;
             padding: 15px;
-            height: 50px;
+            height: 60px;
+            &_title {
+                font-size: 16px;
+            }
         }
     }
     .container {
@@ -90,13 +98,7 @@
     .swiper-button-prev {
         left: 20%;
     }
-    .lesson {
-        &__header {
-            &_title {
-                font-size: 18px;
-            }
-        }
-    }
+    
     
 }
 @media (max-width: 424px) {
