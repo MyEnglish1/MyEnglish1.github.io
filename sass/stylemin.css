@@ -388,7 +388,7 @@ button:hover {
 .lesson__header {
   height: 80px;
   background: url(../img/bg_header2.png) 50% 0 repeat-x, url(../img/bg_header.jpg) 50% 100%/cover no-repeat;
-  padding: 30px 50px;
+  padding: 20px 50px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -414,15 +414,24 @@ button:hover {
   width: 100%;
   height: 100%;
 }
+.lesson__header_title a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .lesson__header_lang {
   display: flex;
   width: 120px;
+  justify-content: space-between;
 }
 
 .btn {
+  display: block;
+  margin: 0;
   width: 35px;
   height: 35px;
   border: 2px solid #000;
+  box-sizing: border-box;
 }
 .btn:hover {
   box-shadow: 5px 5px 15px rgba(26, 26, 26, 0.6588235294);

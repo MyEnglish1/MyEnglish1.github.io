@@ -2,7 +2,7 @@
     &__header {
         height: 80px;
         background: url(../img/bg_header2.png) 50% 0 repeat-x,url(../img/bg_header.jpg) 50% 100%/cover no-repeat;
-        padding: 30px 50px;
+        padding: 20px 50px;
         position: fixed;
         z-index: 1;
         top: 0;
@@ -21,9 +21,16 @@
             font-size: 20px;
             color: #000;
             cursor: pointer;
+            font-weight: 100;
+            margin-bottom: 0;
             img {
                 display: block;
                 margin: 0 auto;
+                width: 100%;
+                height: 100%;
+            }
+            a {
+                display: block;
                 width: 100%;
                 height: 100%;
             }
