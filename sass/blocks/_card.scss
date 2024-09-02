@@ -1,5 +1,7 @@
 .card {
-   
+    .card__video {
+      height: 94%;
+    }   
     padding: 50px 20px;
     position: relative;
     width: 100%;
@@ -24,8 +26,8 @@
       backface-visibility: hidden;
       transition: 1s ease-in-out;
         // linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
-        background: #275246fb;
-        background: url('../img/bg_card.jpg') center center / cover no-repeat;
+        background: #fff;
+        // background: url('../img/bg_card.jpg') center center / cover no-repeat;
         border-radius: 2%;
         
 
