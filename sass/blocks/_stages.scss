@@ -113,6 +113,17 @@
             &_en {
                 color: #000;
             }
+            &_img {
+                height: 35px;
+                width: 35px;
+                margin: 0 auto;
+                margin-top: 45px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
         }
 
     }

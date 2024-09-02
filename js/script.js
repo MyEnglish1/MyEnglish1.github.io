@@ -1,3 +1,13 @@
+const stagesItemContentRuElements = document.querySelectorAll('.stages__item_content_ru');
+const stagesItemContentENElements = document.querySelectorAll('.stages__item_content_en');
+
+stagesItemContentRuElements.forEach(element => {
+    const newElement = document.createElement('div');
+    newElement.classList.add('stages__item_content_img');
+    newElement.innerHTML = '<img src="../img/update-alt.svg" alt="img">';
+    element.insertAdjacentElement('afterend', newElement);
+});
+
 
 
 
@@ -26,6 +36,8 @@ answerChoices.forEach(choice => {
     }
   });
 });
+
+
 
 
 
