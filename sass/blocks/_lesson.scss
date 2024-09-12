@@ -40,7 +40,7 @@
         }
         &_lang {
             display: flex;
-            width: 120px;
+            width: 220px;
             justify-content: space-between;
         }
     }
@@ -48,7 +48,8 @@
 
 .btn {
     display: block;
-    margin: 0;
+    margin: 0 35px;
+    
     width: 35px;
     height: 35px;
     border: 2px solid #fff;
