@@ -94,11 +94,44 @@
 }
 .stages__item_content {
   width: 48%;
+  font-size: 18px;
 }
 .stages__item_content_w100 {
   width: 100%;
   padding-top: 30px;
   text-align: center;
+  color: #000;
+  font-weight: 600;
+}
+.stages__item_content_ru {
+  display: none;
+  color: #000;
+}
+.stages__item_content_en {
+  color: #000;
+}
+.stages__item_content_img {
+  height: 35px;
+  width: 35px;
+  margin: 0 auto;
+  margin-top: 45px;
+}
+.stages__item_content_img img {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+.stages__item_content_br {
+  margin-top: 35px;
+  border: 1px solid #000;
+  border-radius: 25px;
+  min-height: 55px;
+  padding-top: 0;
+  line-height: 55px;
+  transition: 1s;
+}
+.stages__item_content_br:hover {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
 }
 .stages__wrapper {
   display: flex;

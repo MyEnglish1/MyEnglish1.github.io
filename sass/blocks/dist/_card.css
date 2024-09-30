@@ -2,13 +2,16 @@
   padding: 50px 20px;
   position: relative;
   width: 100%;
-  min-height: 300px;
+  min-height: 320px;
   color: white;
   cursor: pointer;
   transition: 1s ease-in-out;
   transform-style: preserve-3d;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
   border-radius: 2%;
+}
+.card .card__video {
+  height: 94%;
 }
 .card:hover {
   transform: rotateY(0.5turn);
@@ -22,14 +25,27 @@
   height: 100%;
   backface-visibility: hidden;
   transition: 1s ease-in-out;
-  background: #275246fb;
-  background: url("../img/bg_card.jpg") center center/cover no-repeat;
+  background: #fff;
   border-radius: 2%;
 }
 .card .card__face--back {
-  padding: 50px 20px;
+  padding: 20px;
   transform: rotateY(0.5turn);
   display: flex;
   flex-direction: column;
   border-radius: 2%;
+}
+.card__game {
+  margin: 0 auto;
+  padding: 50px 20px;
+  position: relative;
+  width: 374px;
+  min-height: 520px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 2%;
+}
+.card__game:hover {
+  transform: none;
 }
