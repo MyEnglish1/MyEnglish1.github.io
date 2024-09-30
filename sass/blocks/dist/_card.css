@@ -49,3 +49,20 @@
 .card__game:hover {
   transform: none;
 }
+.card__game_input {
+  padding: 5px 15px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 90%;
+}
+.card__game_button {
+  padding: 10px;
+}
+.card__game button {
+  margin-top: 50px;
+  width: 150px;
+  height: 35px;
+  border-radius: 0;
+  line-height: 15px;
+}
