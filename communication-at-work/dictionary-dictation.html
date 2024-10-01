@@ -72,15 +72,21 @@
   <div class="container">
     <div class="container__center">
 
-      
+
       <div class="card__game card">
         <div class="card__face card__face--front">
             <div class="stages__item_content stages__item_content_w100" id="wordDisplay"></div>
-            <input class="card__game_input" type="text" id="userInput" placeholder="enter the word with a small letter" />
+            <input class="card__game_input" type="text" id="userInput" placeholder="Введите слово" />
             <button class="card__game_button" onclick="checkAnswer()">Проверить</button>
         </div>
       </div>
-
+    
+      <div id="popup" class="popup" style="display:none;">
+          <div class="popup__content">
+              <div id="popupImg" class="popup__img"> </div>
+              <span id="popupMessage"></span>
+          </div>
+      </div>
         
     
      

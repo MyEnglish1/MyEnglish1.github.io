@@ -1,0 +1,18 @@
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+}
+.popup__img {
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  transform: translateX(-60%);
+  top: 10%;
+  background: url(../img/pngwing.com.png) center center/cover no-repeat;
+}

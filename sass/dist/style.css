@@ -305,11 +305,17 @@ template {
 
 .container {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1240px;
+  padding: 0 20px;
+}
+.container__center {
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
 
 body {
-  background: url(../img/BG.jpg) center center/cover no-repeat fixed;
+  background: #e4e3e3;
 }
 
 span {
@@ -317,27 +323,29 @@ span {
 }
 
 a {
-  color: #000;
+  color: #fff;
 }
 a:hover {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
 button {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 100%;
   border: none;
   margin: 0px auto;
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
   font-size: 16px;
+  font-weight: bold;
   transition: all 1s;
 }
 button:hover {
-  box-shadow: 5px 5px 5px #0000008d;
+  box-shadow: 5px 5px 5px #3c3c3cb9;
   backdrop-filter: blur(50px);
 }
 
@@ -351,6 +359,10 @@ button:hover {
   flex-wrap: wrap;
   padding-bottom: 50px;
 }
+.promo__descr {
+  visibility: hidden;
+  font-size: 2px;
+}
 .promo__item {
   position: relative;
   margin-top: 30px;
@@ -362,7 +374,7 @@ button:hover {
 }
 .promo__item_link {
   display: block;
-  background: #000000a4;
+  background: #3b5898e4;
   min-height: 60px;
   width: 100%;
   position: absolute;
@@ -379,8 +391,8 @@ button:hover {
 
 .lesson__header {
   height: 80px;
-  background: url(../img/bg_header2.png) 50% 0 repeat-x, url(../img/bg_header.jpg) 50% 100%/cover no-repeat;
-  padding: 30px 50px;
+  background: #3b5998;
+  padding: 20px 50px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -391,11 +403,46 @@ button:hover {
 .lesson__header_wrapper {
   display: flex;
   justify-content: space-between;
+  height: 35px;
+  align-items: center;
 }
 .lesson__header_title {
+  display: block;
+  height: 35px;
   font-size: 20px;
-  line-height: 20px;
-  color: #000;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+.lesson__header_title img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+.lesson__header_title a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.lesson__header_lang {
+  display: flex;
+  width: 220px;
+  justify-content: space-between;
+}
+
+.btn {
+  display: block;
+  margin: 0 30px;
+  width: 35px;
+  height: 35px;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  background: #3b5998;
+}
+.btn:hover {
+  box-shadow: 5px 5px 15px #fff;
 }
 
 .stages {
@@ -494,11 +541,44 @@ button:hover {
 }
 .stages__item_content {
   width: 48%;
+  font-size: 18px;
 }
 .stages__item_content_w100 {
   width: 100%;
   padding-top: 30px;
   text-align: center;
+  color: #000;
+  font-weight: 600;
+}
+.stages__item_content_ru {
+  display: none;
+  color: #000;
+}
+.stages__item_content_en {
+  color: #000;
+}
+.stages__item_content_img {
+  height: 35px;
+  width: 35px;
+  margin: 0 auto;
+  margin-top: 45px;
+}
+.stages__item_content_img img {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+.stages__item_content_br {
+  margin-top: 35px;
+  border: 2px solid #000;
+  border-radius: 25px;
+  min-height: 55px;
+  padding-top: 0;
+  line-height: 55px;
+  transition: 1s;
+}
+.stages__item_content_br:hover {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
 }
 .stages__wrapper {
   display: flex;
@@ -654,15 +734,11 @@ button:hover {
 }
 
 .swiper {
-  margin-top: 15%;
+  height: 400px;
 }
 .swiper-wrapper {
   padding: 20px 0;
 }
-.swiper-slide {
-  height: 50vh;
-}
-
 .swiper-pagination-fraction {
   font-family: "Montserrat";
   font-style: normal;
@@ -676,29 +752,59 @@ button:hover {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 20px;
+  line-height: 20px;
   color: #171717;
 }
 
 .swiper-pagination, .swiper-pagination-fraction, .swiper-pagination-horizontal {
-  left: 90%;
-  top: 89.5%;
+  left: 50%;
+  bottom: 0;
   transform: translateX(-50%);
   white-space: nowrap;
+}
+
+.swiper-button-next {
+  position: absolute;
+  top: 95%;
+  right: 42%;
+  z-index: 10;
+  background: url(../img/next.png) center center/contain no-repeat;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  white-space: nowrap;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  z-index: 10;
+  background: url(../img/prev.png) center center/contain no-repeat;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  top: 95%;
+  left: 42%;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  content: none;
 }
 
 .card {
   padding: 50px 20px;
   position: relative;
   width: 100%;
-  min-height: 300px;
+  min-height: 320px;
   color: white;
   cursor: pointer;
   transition: 1s ease-in-out;
   transform-style: preserve-3d;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
   border-radius: 2%;
+}
+.card .card__video {
+  height: 94%;
 }
 .card:hover {
   transform: rotateY(0.5turn);
@@ -712,16 +818,50 @@ button:hover {
   height: 100%;
   backface-visibility: hidden;
   transition: 1s ease-in-out;
-  background: #275246fb;
-  background: url("../img/bg_card.jpg") center center/cover no-repeat;
+  background: #fff;
   border-radius: 2%;
 }
 .card .card__face--back {
-  padding: 50px 20px;
+  padding: 20px;
   transform: rotateY(0.5turn);
   display: flex;
   flex-direction: column;
   border-radius: 2%;
+}
+.card__game {
+  margin: 0 auto;
+  padding: 50px 20px;
+  position: relative;
+  width: 374px;
+  min-height: 520px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 2%;
+}
+.card__game:hover {
+  transform: none;
+}
+.card__game_input {
+  padding: 5px 15px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100%;
+  border: 2px solid #000;
+  border-radius: 25px;
+}
+.card__game_button {
+  padding: 10px;
+}
+.card__game_button {
+  margin-top: 40px;
+  width: 150px;
+  height: 35px;
+  border-radius: 0;
+  line-height: 15px;
+  border: 2px solid #000;
+  border-radius: 25px;
 }
 
 .fixed-element {
@@ -779,13 +919,16 @@ button:hover {
   padding: 50px 20px;
   position: relative;
   width: 100%;
-  min-height: 300px;
+  min-height: 320px;
   color: white;
   cursor: pointer;
   transition: 1s ease-in-out;
   transform-style: preserve-3d;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
   border-radius: 2%;
+}
+.card .card__video {
+  height: 94%;
 }
 .card:hover {
   transform: rotateY(0.5turn);
@@ -799,22 +942,87 @@ button:hover {
   height: 100%;
   backface-visibility: hidden;
   transition: 1s ease-in-out;
-  background: #275246fb;
-  background: url("../img/bg_card.jpg") center center/cover no-repeat;
+  background: #fff;
   border-radius: 2%;
 }
 .card .card__face--back {
-  padding: 50px 20px;
+  padding: 20px;
   transform: rotateY(0.5turn);
   display: flex;
   flex-direction: column;
   border-radius: 2%;
+}
+.card__game {
+  margin: 0 auto;
+  padding: 50px 20px;
+  position: relative;
+  width: 374px;
+  min-height: 520px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 2%;
+}
+.card__game:hover {
+  transform: none;
+}
+.card__game_input {
+  padding: 5px 15px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100%;
+  border: 2px solid #000;
+  border-radius: 25px;
+}
+.card__game_button {
+  padding: 10px;
+}
+.card__game_button {
+  margin-top: 40px;
+  width: 150px;
+  height: 35px;
+  border-radius: 0;
+  line-height: 15px;
+  border: 2px solid #000;
+  border-radius: 25px;
 }
 
 .wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000;
+  color: #000 !important;
+}
+.panel label {
+  margin-bottom: 10px;
+  display: block;
+  color: #000 !important;
+}
+.panel output {
+  margin-top: 10px;
+  display: block;
+  color: #000 !important;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #aaa;
+  z-index: 999999;
 }
 
 @media (max-width: 1200px) {
@@ -827,8 +1035,12 @@ button:hover {
     padding: 40px 10px;
   }
 
-  .card {
-    width: 45%;
+  .swiper-button-next {
+    right: 36%;
+  }
+
+  .swiper-button-prev {
+    left: 36%;
   }
 }
 @media (max-width: 767px) {
@@ -840,7 +1052,7 @@ button:hover {
   }
 
   .promo__item {
-    width: 90%;
+    width: 100%;
   }
 
   .stages__subtitle {
@@ -857,7 +1069,6 @@ button:hover {
   }
   .stages__item_content {
     width: 100%;
-    margin-top: 20px;
   }
   .stages__item_audio {
     margin-right: 0;
@@ -873,9 +1084,25 @@ button:hover {
 @media (max-width: 576px) {
   .lesson__header {
     padding: 15px;
+    height: 60px;
+  }
+  .lesson__header_title {
+    font-size: 18px;
   }
 
-  .card {
-    width: 90%;
+  .container {
+    padding: 0 20px;
+  }
+
+  .swiper {
+    height: 400px;
+  }
+
+  .swiper-button-next {
+    right: 20%;
+  }
+
+  .swiper-button-prev {
+    left: 20%;
   }
 }
