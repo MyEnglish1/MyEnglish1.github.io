@@ -78,7 +78,28 @@ const words = {
         setTimeout(() => div.style.backgroundColor = "", 500); // Reset background after 1 sec
     }
   }
-  
+  function checkAnswer(div, selectedValue) {
+    const popup = document.getElementById('popup');
+    const popupMessage = document.getElementById('popupMessage');
+    
+    if (selectedValue === words[currentKey]) {
+        popupMessage.textContent = '';
+        popup.style.display = 'block';
+        
+        setTimeout(() => {
+            popup.style.display = 'none';
+            updateContent(); // Загружаем новые слова после показа всплывающего окна
+        }, 1000); // Скрыть popup через 1 секунду
+
+        div.style.backgroundColor = ""; 
+        setTimeout(() => div.style.backgroundColor = "", 800); 
+    } else {
+        div.style.backgroundColor = "#ff0000";
+        setTimeout(() => div.style.backgroundColor = "", 500);
+    }
+}
+
+
   // Initial call to set content
   updateContent();
 
