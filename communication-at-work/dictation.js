@@ -46,7 +46,7 @@ const words = {
       const popupImg = document.getElementById('popupImg');
 
       if (userInput === words[currentValue]) {
-          popupMessage.textContent = 'Правильно!';
+          popupMessage.textContent = '';
           popupImg.src = 'correct-image-url.jpg'; // Замените на URL вашей картинки
           popup.style.display = 'block';
 
