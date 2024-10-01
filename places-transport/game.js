@@ -3,7 +3,8 @@
 const words = {
   correct: "правильный, точный",
   left: "левый",
-  right: "road",
+  right: "право",
+  road: "Дорога",
   hospital: "больница",
   pool: "бассейн",
   so: "настолько",
