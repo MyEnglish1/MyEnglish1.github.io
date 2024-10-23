@@ -56,7 +56,7 @@ function checkAnswer() {
     setTimeout(function () {
       // Используем setTimeout для отсрочки
       if (currentAnswer === currentPhraseKey) {
-        alert("\u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E! \u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0430\u044F \u0444\u0440\u0430\u0437\u0430: \"".concat(currentPhraseKey, "\""));
+        alert("\u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E! \"".concat(currentPhraseKey, "\""));
         document.querySelector('.test__phrase_en').innerText = ''; // Сбрасываем ответ
       } else {
         alert("\u041D\u0435\u0432\u0435\u0440\u043D\u043E! \u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0430\u044F \u0444\u0440\u0430\u0437\u0430: \"".concat(currentPhraseKey, "\""));

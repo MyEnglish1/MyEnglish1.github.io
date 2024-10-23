@@ -52,7 +52,7 @@ function checkAnswer() {
     if (currentAnswer.split(' ').length === currentPhraseKey.split(' ').length) {
         setTimeout(() => { // Используем setTimeout для отсрочки
             if (currentAnswer === currentPhraseKey) {
-                alert(`Правильно! Следующая фраза: "${currentPhraseKey}"`);
+                alert(`Правильно! "${currentPhraseKey}"`);
                 document.querySelector('.test__phrase_en').innerText = ''; // Сбрасываем ответ
             } else {
                 alert(`Неверно! Правильная фраза: "${currentPhraseKey}"`);
