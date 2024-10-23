@@ -8,6 +8,70 @@ stagesItemContentRuElements.forEach(element => {
     element.insertAdjacentElement('afterend', newElement);
 });
 
+let currentPhraseKey;
+let currentPhraseValue;
+
+function loadNextPhrase() {
+    const keys = Object.keys(phrases);
+    const randomIndex = Math.floor(Math.random() * keys.length);
+    currentPhraseKey = keys[randomIndex];
+    currentPhraseValue = phrases[currentPhraseKey];
+
+    document.querySelector('.test__phrase_ru').innerText = currentPhraseValue;
+    displayWords(currentPhraseKey);
+}
+
+function displayWords(phrase) {
+    const words = phrase.split(' ');
+    const wrapper = document.querySelector('.test__wrapper');
+    wrapper.innerHTML = ''; // Очищаем предыдущие слова
+
+    // Случайная сортировка слов
+    words.sort(() => Math.random() - 0.5).forEach(word => {
+        const wordDiv = document.createElement('div');
+        wordDiv.className = 'test__word';
+        wordDiv.innerText = word;
+        wordDiv.onclick = () => addWord(wordDiv, word);
+        wrapper.appendChild(wordDiv);
+    });
+}
+
+function addWord(wordDiv, word) {
+    const phraseDiv = document.querySelector('.test__phrase_en');
+    phraseDiv.innerText += (phraseDiv.innerText.length > 0 ? ' ' : '') + word;
+
+    wordDiv.remove(); // Удаляем выбранное слово из обёртки
+    
+    checkAnswer(); // Переносим проверку ответов на следующий этап
+}
+
+function checkAnswer() {
+    const currentAnswer = document.querySelector('.test__phrase_en').innerText.trim();
+    
+    // Проверка на полное заполнение
+    if (currentAnswer.split(' ').length === currentPhraseKey.split(' ').length) {
+        setTimeout(() => { // Используем setTimeout для отсрочки
+            if (currentAnswer === currentPhraseKey) {
+                alert(`Правильно! Следующая фраза: "${currentPhraseKey}"`);
+                document.querySelector('.test__phrase_en').innerText = ''; // Сбрасываем ответ
+            } else {
+                alert(`Неверно! Правильная фраза: "${currentPhraseKey}"`);
+                document.querySelector('.test__phrase_en').innerText = ''; // Сбрасываем ответ
+                displayWords(currentPhraseKey); // Повторно отображаем слова
+            }
+            loadNextPhrase(); // Загружаем новую фразу после алерта
+        }, 100); // 100 мс задержка для лучшего UX
+    }
+}
+
+// Инициализация
+loadNextPhrase();
+
+
+
+
+
+
 
 
 
@@ -36,6 +100,8 @@ answerChoices.forEach(choice => {
     }
   });
 });
+
+
 
 
 
