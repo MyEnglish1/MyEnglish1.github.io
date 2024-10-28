@@ -1021,8 +1021,17 @@ button:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #aaa;
   z-index: 999999;
+}
+.popup__img {
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  transform: translateX(-60%);
+  top: 10%;
+  background: url(../img/pngwing.com.png) center center/cover no-repeat;
 }
 
 @media (max-width: 1200px) {
