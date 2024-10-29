@@ -51,14 +51,18 @@
   <section class="lesson">
     <div class="lesson__header">
       <div class="lesson__header_wrapper">
-        <!-- <div class="lesson__header_title lesson__header_title_change">
+        <div class="lesson__header_title lesson__header_title_change">
           <img src="../img/update-alt-svgrepo-com.svg" alt="update">
-        </div> -->
-          <div class="lesson__header_lang">
-              <div class="lesson__header_right">0</div>
-              <div class="lesson__header_wrong">0</div>
-          </div>
-        <div class="lesson__header_title lesson__header_img"><a href="key-points.html">
+        </div>
+        <div class="lesson__header_lang">
+          <!-- <button   class="btn lesson__header_title lesson__header_title_ru" type="button" >
+            <span class="btn__sr">Ru</span>
+          </button>
+          <button   class="btn lesson__header_title lesson__header_title_en" type="button">
+            <span class="btn__sr">En</span> -->
+          </button>
+        </div>
+        <div class="lesson__header_title lesson__header_img"><a href="going-to-the-doctor.html">
           <img src="../img/close-svgrepo-com.svg" alt="close">
         </a></div>
       </div>
@@ -68,30 +72,28 @@
   <div class="container">
     <div class="container__center">
 
-      
+
       <div class="card__game card">
         <div class="card__face card__face--front">
-          <div class="stages__item_audio stages__item_audio_m0 ">
-            <button class="button">Play</button>
-          </div>
-          <div class="stages__item_content stages__item_content_w100 stages__item_content_en">absolutely</div>
-          <div class="stages__item_content stages__item_content_w100 stages__item_content_br">абсолютно</div>
-          <div class="stages__item_content stages__item_content_w100 stages__item_content_br">абсолютно</div>
-          <div class="stages__item_content stages__item_content_w100 stages__item_content_br">абсолютно</div>
-        </div>
+            <div class="stages__item_content stages__item_content_w100" id="wordDisplay"></div>
+            <input class="card__game_input" type="text" id="userInput" placeholder="Enter the word with a small letter" />
+            <button class="card__game_button" onclick="checkAnswer()">Проверить</button>
         </div>
       </div>
-     
+    
       <div id="popup" class="popup" style="display:none;">
-        <div class="popup__content">
-            <div id="popupImg" class="popup__img"> </div>
-            <span id="popupMessage"></span>
-        </div>
+          <div class="popup__content">
+              <div id="popupImg" class="popup__img"> </div>
+              <span id="popupMessage"></span>
+          </div>
       </div>
-      
+        
+    
+     
      
     </div>
   </div>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -99,7 +101,9 @@
   <script src="../js/swiper.min.js"></script>
   <script src="../js/swiper.js"></script>
   <script src="../js/script.js"></script>
-  <script src="game.js"></script>
+  <script src="dictation.js"></script>
+
+  
 
 </body>
 </html>
