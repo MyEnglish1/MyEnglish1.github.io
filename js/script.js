@@ -5,7 +5,6 @@ stagesItemContentRuElements.forEach(element => {
     const newElement = document.createElement('div');
     newElement.classList.add('stages__item_content_img');
     newElement.innerHTML = '<img src="../../img/update-alt.svg" alt="img">';
-    newElement.innerHTML = '<img src="../img/update-alt.svg" alt="img">';
     element.insertAdjacentElement('afterend', newElement);
 });
 
@@ -25,9 +24,8 @@ function loadNextPhrase() {
 function displayWords(phrase) {
     const words = phrase.split(' ');
     const wrapper = document.querySelector('.test__wrapper');
-    wrapper.innerHTML = ''; // Очищаем предыдущие слова
+    wrapper.innerHTML = '';
 
-    // Случайная сортировка слов
     words.sort(() => Math.random() - 0.5).forEach(word => {
         const wordDiv = document.createElement('div');
         wordDiv.className = 'test__word';
@@ -40,33 +38,43 @@ function displayWords(phrase) {
 function addWord(wordDiv, word) {
     const phraseDiv = document.querySelector('.test__phrase_en');
     phraseDiv.innerText += (phraseDiv.innerText.length > 0 ? ' ' : '') + word;
-
-    wordDiv.remove(); // Удаляем выбранное слово из обёртки
-    
-    checkAnswer(); // Переносим проверку ответов на следующий этап
+    wordDiv.remove(); 
+    checkAnswer(); 
 }
 
 function checkAnswer() {
     const currentAnswer = document.querySelector('.test__phrase_en').innerText.trim();
-    
-    // Проверка на полное заполнение
+
     if (currentAnswer.split(' ').length === currentPhraseKey.split(' ').length) {
-        setTimeout(() => { // Используем setTimeout для отсрочки
+        setTimeout(() => {
             if (currentAnswer === currentPhraseKey) {
-                alert(`Правильно! "${currentPhraseKey}"`);
-                document.querySelector('.test__phrase_en').innerText = ''; // Сбрасываем ответ
+                document.querySelector('.lesson__header_right').innerText = 
+                  parseInt(document.querySelector('.lesson__header_right').innerText) + 1;
+                // document.querySelector('#popupMessage').innerText = "Правильно! " + currentPhraseKey;
+                document.querySelector('#popup').style.display = 'block';
+                
+                setTimeout(() => {
+                    document.querySelector('#popup').style.display = 'none';
+                }, 1000); // Скрываем через 1 секунду
+
+                document.querySelector('.test__phrase_en').innerText = '';
             } else {
-                alert(`Неверно! Правильная фраза: "${currentPhraseKey}"`);
-                document.querySelector('.test__phrase_en').innerText = ''; // Сбрасываем ответ
-                displayWords(currentPhraseKey); // Повторно отображаем слова
+                document.querySelector('.lesson__header_wrong').innerText = 
+                  parseInt(document.querySelector('.lesson__header_wrong').innerText) + 1;
+                alert("Неверно! Правильная фраза: \"" + currentPhraseKey + "\"");
+                document.querySelector('.test__phrase_en').innerText = '';
+                displayWords(currentPhraseKey);
             }
-            loadNextPhrase(); // Загружаем новую фразу после алерта
-        }, 100); // 100 мс задержка для лучшего UX
+            loadNextPhrase(); 
+        }, 500); 
     }
 }
 
 // Инициализация
 loadNextPhrase();
+
+
+
 
 
 
