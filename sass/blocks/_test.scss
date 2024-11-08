@@ -7,18 +7,23 @@
     margin: 0 auto;
     // margin-top: 300px;
     width: 100%;
+    min-height: 450px;
+
     &__container {
         position: relative;
         height: 100vh;
         padding: 0 !important;
     }
+
     &__phrase {
         text-align: center;
         font-size: 20px;
+
         &_en {
             margin-top: 15px;
         }
     }
+
     &__wrapper {
         margin: 0 auto;
         margin-top: 30px;
@@ -26,6 +31,7 @@
         max-width: 360px;
         flex-wrap: wrap;
     }
+
     &__word {
         width: 33.333%;
         height: 50px;
@@ -33,6 +39,21 @@
         border: 1px solid #fff;
         line-height: 50px;
         cursor: pointer;
+    }
+
+    &__ago {
+        height: 50px;
+        width: 80px;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid #fff;
+        line-height: 50px;
+        cursor: pointer;
+        // margin-top: 80px;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
 }
