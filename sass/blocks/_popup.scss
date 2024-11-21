@@ -18,3 +18,13 @@
         
     }
 }
+
+.popup__error {
+    display: none;
+    background: #e4e3e3;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    width: 100%;
+}
