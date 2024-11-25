@@ -11,19 +11,7 @@ stagesItemContentRuElements.forEach(element => {
 
 
 
-
-function checkOrientation() {
-  const popup = document.getElementById('popupError');
-  if (window.innerHeight > window.innerWidth) {
-      popup.style.display = 'none'; // Вертикальная ориентация, скрыть сообщение
-  } else {
-      popup.style.display = 'block'; // Альбомная ориентация, показать сообщение
-  }
-}
-
-window.addEventListener('orientationchange', checkOrientation);
-window.addEventListener('resize', checkOrientation);
-checkOrientation(); // Первоначальная проверка
+// 
 
 // let currentPhraseKey;
 // let currentPhraseValue;
