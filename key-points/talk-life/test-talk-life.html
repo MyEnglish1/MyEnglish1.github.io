@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Разговорник для путешественников. Разговрник для туристов</title>
+    <meta name="title" content="Разговорник для путешественников. Разговрник для туристово">
+    <meta name="description" content="Разговорник для путешественников. Разговрник для туристов">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="og:description" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="twitter:description" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Favicon  -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../icons/favicon//apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../icons/favicon//apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../icons/favicon//apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../icons/favicon//apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../icons/favicon//apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../icons/favicon//apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../icons/favicon//apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../icons/favicon//apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/favicon//apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon//favicon-16x16.png">
+    <link rel="manifest" href="icons/favicon//manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../icons/favicon//ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/style.min.css">
+</head>
+
+<body>
+    <section class="lesson">
+        <div class="lesson__header">
+            <div class="lesson__header_wrapper">
+                <div class="lesson__header_lang">
+                    <div class="lesson__header_right">0</div>
+                    <div class="lesson__header_wrong">0</div>
+                </div>
+                <div class="lesson__header_title lesson__header_img">
+                    <a href="promo-talk-life.html">
+                        <img src="../../img/close-svgrepo-com.svg" alt="close">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo">
+        <div class="container">
+            <div class="test">
+                <div class="test__phrase test__phrase_ru"></div>
+                <div class="test__phrase test__phrase_en"></div>
+                <div class="test__wrapper"></div>
+                <div class="test__ago">Назад</div>
+            </div>
+        </div>
+    </section>
+
+    <div id="popup" class="popup" style="display:none;">
+        <div class="popup__content">
+            <div id="popupImg" class="popup__img"> </div>
+            <span id="popupMessage"></span>
+        </div>
+    </div>
+
+
+    <script>
+        const phrases = {
+            "I first traveled abroad when I was 15.": "Я впервые поехала за границу, когда мне было 15 лет.",
+            "I got my first car when I was 17.": "Первый автомобиль появился у меня в 17 лет.",
+            "I moved out of my parents' house when I was 18.": "Я уехал из дома моих родителей, когда мне было 18 лет.",
+            "I moved away from home when I was 18.": "Я уехал из дома, когда мне было 18 лет.",
+            "I got my first apartment with my best friend.": "Я получила свою первую квартиру с моим лучшим другом.",
+            "I met the love of my life when I was 22.": "Я встретила любовь всей моей жизни, когда мне было 22 года.",
+            "We fell in love and got married.": "Мы полюбили друг друга и поженились.",
+            "We had our first child when I was 25.": "У нас появился первый ребёнок, когда мне было 25 лет.",
+            "We had our first grandchild when I was 46.": "У нас появился первый внук, когда мне было 46 лет.",
+            "She moved away from home when she was 20.": "Она уехала из дома в 20 лет.",
+            "He moved out when he was 18.": "Он переехал в 18 лет.",
+            "She had her first child when she was 24.": "Она родила первого ребёнка в 24 года.",
+            "She first traveled abroad when she was 17.": "Она впервые поехала за границу, когда ей было 17 лет.",
+            "He met the love of his life at university.": "Он встретил любовь своей жизни в университете.",
+            "He got his first car when he was 19.": "Первая машина появилась у него в 19 лет.",
+            "After I got promoted, we got a new house.": "После того, как меня повысили, мы переехали в новый дом.",
+            "He traveled abroad after he graduated.": "Он путешествовал за границей после того, как закончил учёбу.",
+            "After he moved away from home, he fell in love.": "После того, как он уехал из дома, он влюбился.",
+            "She retired after 35 years in the company.": "Она вышла на пенсию после 35 лет работы в компании.",
+            "Our son was born a year after we got married.": "Наш сын родился через год после того, как мы поженились.",
+            "Who did she marry?": "За кого она вышла?",
+            "Where are they going to live?": "Где они собираются жить?",
+            "When did they start going out?": "Когда они начали встречаться?",
+            "They got an apartment near here.": "Они получили квартиру недалеко отсюда.",
+            "She married Hank.": "Она вышла замуж за Хэнка.",
+            "I went to Mary's wedding.": "Я ходил на свадьбу Мэри.",
+            "They fell in love really fast!": "Они влюбились друг в друга очень быстро!"
+        };
+    </script>
+
+
+
+
+    </div>
+    </div>
+    </section>
+
+
+
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>
