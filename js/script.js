@@ -8,11 +8,6 @@ stagesItemContentRuElements.forEach(element => {
   element.insertAdjacentElement('afterend', newElement);
 });
 
-
-
-
-// 
-
 // let currentPhraseKey;
 // let currentPhraseValue;
 // let usedWords = []; // Array to store used words

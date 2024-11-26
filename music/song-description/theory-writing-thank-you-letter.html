@@ -44,81 +44,86 @@
   <meta name="msapplication-TileImage" content="../icons/favicon//ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="../css/style.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../css/swiper.min.css">
+
+  <link rel="stylesheet" href="../../css/style.min.css">
 </head>
 
 <body>
   <section class="lesson">
     <div class="lesson__header">
       <div class="lesson__header_wrapper">
-        <div class="lesson__header_title">Кино</div>
-        <div class="lesson__header_title"><a href="../index.html">На главную</a></div>
+
+        <div class="lesson__header_title lesson__header_img"><a href="places.html">
+            <img src="../../img/close-svgrepo-com.svg" alt="close">
+          </a></div>
       </div>
     </div>
   </section>
 
-  <section class="promo">
-    <div class="container">
-      <div class="promo__wrapper">
-        <div class="promo__item" style="background-image: url('img/talking-movie.jpg');">
-          <a href="talking-about-the-movie.html" class="promo__item_link">
-            1. Разговор о фильме
-          </a>
-        </div>
-        <div class="promo__item" style="background-image: url('img/description-movie.jpg');">
-          <a href="description-movie.html" class="promo__item_link">
-            2. Описание любимого фильма
-          </a>
-        </div>
-        <div class="promo__item" style="background-image: url('img/choice-movie.png');">
-          <a href="choice-movie.html" class="promo__item_link">
-            3. Выбор фильма для просмотра
-          </a>
+  <div class="container">
+    <div class="container__center">
+      <div class="stages__content stages__content_active">
+        <h3 class="stages__subtitle">Предлагаем что-либо и отвечаем на предложение</h3>
+        <div class="stages__descr">Используйте выражения how about, what about, why don't we и let's для предложения
+          чего-либо. <br> За фразами How about и what about следует существительное или герундий (verb + -ing).</div>
+
+        <div class="stages__item_wrap">
+          <div class="stages__item_audio ">
+            <button class="button">Play</button>
+          </div>
+          <div class="stages__item_content stages__item_content_en">What about a game of cards?</div>
+          <div class="stages__item_content">Как насчет игры в карты?</div>
         </div>
 
-        <div class="promo__item" style="background-image: url('img/dictionary.jpeg');">
-          <a href="dictionary.html" class="promo__item_link">
-            Словарь
-          </a>
-        </div>
-        <div class="promo__item" style="background-image: url('img/dictionary.jpeg');">
-          <a href="dictionary-game.html" class="promo__item_link">
-            Словарь тест
-          </a>
+        <div class="stages__item_wrap">
+          <div class="stages__item_audio ">
+            <button class="button">Play</button>
+          </div>
+          <div class="stages__item_content stages__item_content_en">How about watching a movie?</div>
+          <div class="stages__item_content">Как насчет просмотра фильма?</div>
         </div>
 
-        <div class="promo__item" style="background-image: url('img/dictionary.jpeg');">
-          <a href="dictionary-dictation.html" class="promo__item_link">
-            Словарь диктант
-          </a>
+        <div class="stages__descr">За фразой Why don't we следует базовая форма глагола.</div>
+
+        <div class="stages__item_wrap">
+          <div class="stages__item_audio ">
+            <button class="button">Play</button>
+          </div>
+          <div class="stages__item_content stages__item_content_en">Why don't we go to the swimming pool?</div>
+          <div class="stages__item_content">Почему бы нам не пойти в бассейн?</div>
         </div>
+
+
+
+
+
+
       </div>
     </div>
-  </section>
+  </div>
 
+  <script>
+    // Получаем все кнопки "Play"
+    const buttons = document.querySelectorAll('.button');
 
-
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function (m, e, t, r, i, k, a) {
-      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-      m[i].l = 1 * new Date();
-      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-    })
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(95818770, "init", {
-      clickmap: true,
-      trackLinks: true,
-      accurateTrackBounce: true
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Находим родительский элемент .stages__item_wrap
+        const itemWrap = this.closest('.stages__item_wrap');
+        // Получаем текст из соответствующего элемента с классом stages__item_content_en
+        const text = itemWrap.querySelector('.stages__item_content_en').textContent;
+        // Создаем объект для речевого синтеза
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US'; // Установка языка на английский
+        speechSynthesis.speak(utterance); // Воспроизведение текста
+      });
     });
   </script>
-  <noscript>
-    <div><img src="https://mc.yandex.ru/watch/95818770" style="position:absolute; left:-9999px;" alt="" /></div>
-  </noscript>
-  <!-- /Yandex.Metrika counter -->
-  <script src="../js/script.js"></script>
+
+
+  <script src="../../js/script.js"></script>
 </body>
 
 </html>
