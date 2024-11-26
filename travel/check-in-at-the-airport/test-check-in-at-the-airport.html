@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Разговорник для путешественников. Разговрник для туристов</title>
+    <meta name="title" content="Разговорник для путешественников. Разговрник для туристово">
+    <meta name="description" content="Разговорник для путешественников. Разговрник для туристов">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="og:description" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="twitter:description" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Favicon  -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../icons/favicon//apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../icons/favicon//apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../icons/favicon//apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../icons/favicon//apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../icons/favicon//apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../icons/favicon//apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../icons/favicon//apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../icons/favicon//apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/favicon//apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon//favicon-16x16.png">
+    <link rel="manifest" href="icons/favicon//manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../icons/favicon//ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/style.min.css">
+</head>
+
+<body>
+    <section class="lesson">
+        <div class="lesson__header">
+            <div class="lesson__header_wrapper">
+                <div class="lesson__header_lang">
+                    <div class="lesson__header_right">0</div>
+                    <div class="lesson__header_wrong">0</div>
+                </div>
+                <div class="lesson__header_title lesson__header_img">
+                    <a href="promo-check-in-at-the-airport.html">
+                        <img src="../../img/close-svgrepo-com.svg" alt="close">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo">
+        <div class="container">
+            <div class="test">
+                <div class="test__phrase test__phrase_ru"></div>
+                <div class="test__phrase test__phrase_en"></div>
+                <div class="test__wrapper"></div>
+                <div class="test__ago">Назад</div>
+            </div>
+        </div>
+    </section>
+
+    <div id="popup" class="popup" style="display:none;">
+        <div class="popup__content">
+            <div id="popupImg" class="popup__img"> </div>
+            <span id="popupMessage"></span>
+        </div>
+    </div>
+
+
+    <script>
+        const phrases = {
+            "May I see your passport, please?": "Ваш паспорт, пожалуйста.",
+            "Your flight has been delayed.": "Ваш рейс задерживается.",
+            "It's now scheduled to depart at 6 p.m.": "Теперь отправление назначено на 18:00.",
+            "I'm sorry for any inconvenience.": "Прошу прощения за неудобства.",
+            "Are you checking any bags today?": "Вы сдаёте багаж?",
+            "one bag to check and one bag to carry on": "одна сумка в багаж и одна с собой",
+            "Have you left your bags unattended?": "Оставался ли багаж без присмотра?",
+            "a window seat or an aisle seat": "место у окна или место возле прохода",
+            "Your flight will depart from Gate B25.": "Ваш рейс отправляется от пункта выхода на посадку B25.",
+            "The flight boards at 5:30.": "Посадка на рейс в 5:30.",
+            "Here's my ticket and passport.": "Вот мой билет и паспорт.",
+            "My flight has been delayed.": "Мой рейс был отложен.",
+            "I have one bag to check and one to carry on.": "Одну сумку я сдаю в багаж, а одну беру с собой.",
+            "I've always had my bags with me.": "Мои сумки всегда со мной.",
+            "I'd like an aisle seat.": "Я бы предпочел сесть в проходе.",
+            "My flight departs from Gate C2.": "Номер моего выхода на посадку: С2"
+        };
+    </script>
+
+
+
+
+    </div>
+    </div>
+    </section>
+
+
+
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>
