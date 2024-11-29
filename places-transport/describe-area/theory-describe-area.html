@@ -259,8 +259,8 @@
         const text = itemWrap.querySelector('.stages__item_content_en').textContent;
         // Создаем объект для речевого синтеза
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-US'; // Установка языка на английский
-        utterance.rate = 0.7; // Установка скорости произношения (по умолчанию 1)
+        utterance.lang = 'en-GB'; // Установка языка на английский
+        utterance.rate = 1; // Установка скорости произношения (по умолчанию 1)
         speechSynthesis.speak(utterance); // Воспроизведение текста
       });
     });
