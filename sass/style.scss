@@ -6,28 +6,34 @@
     margin: 0;
     padding: 0;
 }
+
 .container {
     margin: 0 auto;
-    max-width: 1240px; 
+    max-width: 1240px;
     padding: 0 20px;
+
     &__center {
         display: flex;
         align-items: center;
         height: 100vh;
     }
-    
+
 }
+
 body {
     background: #e4e3e3;
-    
+
     // background: url(../img/BG.jpg) center center / cover no-repeat fixed;
-    
+
 }
+
 span {
     font-weight: 700;
 }
+
 a {
     color: #fff;
+
     &:hover {
         text-decoration: none;
         color: #fff;
@@ -41,7 +47,7 @@ a {
 @import 'blocks/draggable';
 @import 'blocks/swiper';
 @import 'blocks/card';
-@import 'blocks/move'; 
+@import 'blocks/move';
 @import 'blocks/card';
 @import 'blocks/wrapper';
 @import 'blocks/panel';

@@ -6,106 +6,121 @@
     }
 
 }
+
 @media (max-width: 991px) {
     .stages {
         &__content {
             padding: 40px 10px;
         }
-        
-    }  
+
+    }
+
     // .card {
     //     width: 45%;
     // }
     .swiper-button-next {
         right: 36%;
     }
+
     .swiper-button-prev {
         left: 36%;
     }
-    
-    
+
+
 }
+
 @media (max-width: 767px) {
-    
+
     .lesson {
         &__header {
             padding: 15px;
         }
+
         &_title {
             font-size: 18px;
         }
     }
+
     .promo {
         &__item {
             width: 100%;
         }
     }
+
     .stages {
         &__subtitle {
-            font-size: 18px;
+            font-size: 20px;
             text-align: center;
         }
+
         &__item {
             width: 90%;
+
             &_wrap {
                 margin-top: 60px;
                 flex-direction: column;
                 text-align: center;
             }
+
             &_content {
                 width: 100%;
             }
+
             &_audio {
                 margin-right: 0;
             }
-            
+
         }
+
         &__descr {
             text-align: center;
-            font-size: 16px;
+            font-size: 20px;
         }
+
         &__wrapper {
             margin-top: 30px;
         }
     }
-    
-   
-    
+
+
+
 }
+
 @media (max-width: 576px) {
-    
+
     .lesson {
         &__header {
             padding: 15px;
             height: 60px;
+
             &_title {
                 font-size: 18px;
             }
         }
     }
+
     .container {
         padding: 0 20px;
     }
+
     .swiper {
         // margin-top: 35%;
         height: 400px;
-        
+
     }
+
     .swiper-button-next {
         right: 20%;
-        
+
     }
+
     .swiper-button-prev {
         left: 20%;
     }
-    
-    
+
+
 }
-@media (max-width: 424px) {
-    
-}
-@media (max-width: 374px) {
-    
-    
-    
-}
+
+@media (max-width: 424px) {}
+
+@media (max-width: 374px) {}
