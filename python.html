@@ -89,18 +89,19 @@
           }
   
           #recordButton {
-              padding: 15px 30px;
+              width: 190px;
+              padding: 7px 30px;
               font-size: 18px;
-              background: #3498db;
+              background: #3b5998;
               color: white;
               border: none;
               border-radius: 5px;
               cursor: pointer;
-              transition: background 0.3s;
+              transition: background 0.5s;
           }
   
           #recordButton:hover {
-              background: #2980b9;
+              background: #3b5998;
           }
   
           #result {
@@ -125,96 +126,119 @@
               color: #7f8c8d;
           }
       </style>
-  </head>
-  <body>
-      <div class="container">
-          <h2>Произнесите фразу:</h2>
-          <div id="targetPhrase"></div>
-          <button id="recordButton">Начать запись</button>
-          <div id="status"></div>
-          <div id="result"></div>
-      </div>
   
-      <script>
-          // JavaScript код
-          const phrases = [
-              "How are you?",
-              "The hottest nightclub in town.",
-              "Beijing is in China.",
-              "They came here in 2005.",
-              "I live on Main Street.",
-              "The lecture is on Monday.",
-              "My birthday is on April 17th.",
-              "His house is at 465 Pine Street.",
-              "The concert is at 5 p.m.",
-              "The lecture is at the auditorium."
-          ];
-  
-          const recordButton = document.getElementById('recordButton');
-          const resultDiv = document.getElementById('result');
-          const statusDiv = document.getElementById('status');
-          const targetPhraseDiv = document.getElementById('targetPhrase');
-  
-          let currentPhrase = "";
-  
-          // Функция для выбора случайной фразы
-          function getRandomPhrase() {
-              return phrases[Math.floor(Math.random() * phrases.length)];
-          }
-  
-          // Отображаем случайную фразу
-          function displayRandomPhrase() {
-              currentPhrase = getRandomPhrase();
-              targetPhraseDiv.textContent = currentPhrase;
-          }
-  
-          // Проверка поддержки Web Speech API
-          if (!('webkitSpeechRecognition' in window)) {
-              resultDiv.textContent = "Ваш браузер не поддерживает распознавание речи";
-              recordButton.disabled = true;
-          } else {
-              const recognition = new webkitSpeechRecognition();
-              recognition.continuous = false;
-              recognition.interimResults = false;
-              recognition.lang = 'en-US';
-  
-              recordButton.addEventListener('click', () => {
-                  recognition.start();
-                  statusDiv.textContent = "Слушаем...";
-                  recordButton.disabled = true;
-              });
-  
-              recognition.onresult = (event) => {
-                  const transcript = event.results[0][0].transcript.toLowerCase().trim();
-                  const expectedPhrase = currentPhrase.toLowerCase().trim();
-                  statusDiv.textContent = "";
-  
-                  if (transcript === expectedPhrase) {
-                      resultDiv.textContent = "✅ Правильно! Отличное произношение!";
-                      resultDiv.className = 'correct';
-                  } else {
-                      resultDiv.textContent = `❌ Попробуйте ещё раз. Вы сказали: "${transcript}"`;
-                      resultDiv.className = 'incorrect';
-                  }
-  
-                  recordButton.disabled = false;
-                  displayRandomPhrase(); // Показываем новую фразу
-              };
-  
-              recognition.onerror = (event) => {
-                  statusDiv.textContent = "Ошибка при распознавании речи";
-                  recordButton.disabled = false;
-              };
-  
-              recognition.onend = () => {
-                  statusDiv.textContent = "";
-                  recordButton.disabled = false;
-              };
-          }
-  
-          // Инициализация первой фразы
-          displayRandomPhrase();
-      </script>
+    
+  <div class="container">
+    <h2>Произнесите фразу:</h2>
+    <div id="scoreDisplay">Счет: 0</div>
+    <div id="targetPhrase"></div>
+    <button id="recordButton">Начать запись</button>
+    <div id="status"></div>
+    <div id="result"></div>
+</div>
+
+<script>
+    // Обновленная реализация с кросс-браузерной поддержкой
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    
+    if (!SpeechRecognition) {
+        document.getElementById('result').textContent = 
+            "Ваш браузер не поддерживает распознавание речи";
+        document.getElementById('recordButton').disabled = true;
+    }
+
+    const phrases = [
+        "How are you",
+        "The hottest nightclub in town",
+        "Beijing is in China",
+        "They came here in 2005",
+        "I live on Main Street",
+        "The lecture is on Monday",
+        "My birthday is on April 17",
+        "His house is at 465 Pine Street",
+        "The concert is at 5 pm",
+        "The lecture is at the auditorium"
+    ];
+
+    const UI = {
+        recordButton: document.getElementById('recordButton'),
+        resultDiv: document.getElementById('result'),
+        statusDiv: document.getElementById('status'),
+        targetPhraseDiv: document.getElementById('targetPhrase'),
+        scoreDisplay: document.getElementById('scoreDisplay')
+    };
+
+    let currentPhrase = "";
+    let score = 0;
+    let recognition;
+
+    function initSpeechRecognition() {
+        recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = 'en-US';
+
+        recognition.onstart = () => {
+            UI.statusDiv.textContent = "Слушаем...";
+            UI.recordButton.disabled = true;
+        };
+
+        recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript.toLowerCase().trim();
+            const expectedPhrase = currentPhrase.toLowerCase().trim();
+            
+            UI.statusDiv.textContent = "";
+            UI.recordButton.disabled = false;
+
+            if (transcript === expectedPhrase) {
+                handleSuccess();
+            } else {
+                handleError(transcript);
+            }
+        };
+
+        recognition.onerror = (event) => {
+            UI.statusDiv.textContent = "Ошибка при распознавании речи";
+            UI.recordButton.disabled = false;
+        };
+
+        recognition.onend = () => {
+            UI.statusDiv.textContent = "";
+            UI.recordButton.disabled = false;
+        };
+    }
+
+    function handleSuccess() {
+        score++;
+        UI.resultDiv.textContent = "✅ Правильно! Отличное произношение!";
+        UI.resultDiv.className = 'correct';
+        UI.scoreDisplay.textContent = `Счет: ${score}`;
+        loadNewPhrase();
+    }
+
+    function handleError(transcript) {
+        UI.resultDiv.textContent = `❌ Попробуйте ещё раз. Вы сказали: "${transcript}"`;
+        UI.resultDiv.className = 'incorrect';
+    }
+
+    function loadNewPhrase() {
+        currentPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        UI.targetPhraseDiv.textContent = currentPhrase;
+    }
+
+    function init() {
+        if (SpeechRecognition) {
+            initSpeechRecognition();
+            UI.recordButton.addEventListener('click', () => recognition.start());
+        }
+        loadNewPhrase();
+        UI.
+        scoreDisplay.textContent = `Счет: ${score}`;
+        }
+
+        // Инициализация приложения
+        init();
+    </script>
 
 
 
