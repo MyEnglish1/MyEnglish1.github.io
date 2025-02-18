@@ -87,9 +87,21 @@ function speakText(text, button) {
     utterance.lang = 'en-GB';
     utterance.rate = 0.8;
 
+
+
     // Поиск подходящего голоса
-    const voices = speechSynthesis.getVoices();
-    utterance.voice = voices.find(v => v.lang === 'en-GB' && v.name.includes('')) || voices[0];
+    // const voices = speechSynthesis.getVoices();
+    // utterance.voice = voices.find(v => v.lang === 'en-GB' && v.name.includes('male')) || voices[0];
+
+    utterance.voice = speechSynthesis.getVoices().find(function (voice) {
+        return voice.lang === 'en-GB' && voice.gender === 'male';
+    }); // Установим голос на британский мужской
+
+    utterance.rate = 0.8; // Установим скорость речи
+
+    utterance.pitch = 1; // Установим тон речи
+
+    utterance.volume = 1; // Установим громкость
 
     // Обработчики событий
     utterance.onend = () => {
@@ -105,7 +117,6 @@ function speakText(text, button) {
     // Запуск синтеза
     window.speechSynthesis.speak(utterance);
 }
-
 
 // Панель управления повторами
 const panelHTML = `
