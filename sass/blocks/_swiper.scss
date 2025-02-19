@@ -38,7 +38,7 @@
 .swiper-button-next {
     position: absolute;
     top: 95%;
-    right: 42%;
+    right: 41%;
     z-index: 10;
     background: url(../img/next.png) center center / contain no-repeat;
     width: 50px;
@@ -54,7 +54,7 @@
     height: 50px;
     opacity: 1;
     top: 95%;
-    left: 42%;
+    left: 41%;
 }
 .swiper-button-next::after, .swiper-button-prev::after {
     content: none;
