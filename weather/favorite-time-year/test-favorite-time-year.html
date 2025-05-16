@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Разговорник для путешественников. Разговрник для туристов</title>
+    <meta name="title" content="Разговорник для путешественников. Разговрник для туристово">
+    <meta name="description" content="Разговорник для путешественников. Разговрник для туристов">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="og:description" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="twitter:description" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Favicon  -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../icons/favicon//apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../icons/favicon//apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../icons/favicon//apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../icons/favicon//apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../icons/favicon//apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../icons/favicon//apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../icons/favicon//apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../icons/favicon//apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/favicon//apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon//favicon-16x16.png">
+    <link rel="manifest" href="icons/favicon//manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../icons/favicon//ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/style.min.css">
+</head>
+
+<body>
+    <section class="lesson">
+        <div class="lesson__header">
+            <div class="lesson__header_wrapper">
+                <div class="lesson__header_lang">
+                    <div class="lesson__header_right">0</div>
+                    <div class="lesson__header_wrong">0</div>
+                </div>
+                <div class="lesson__header_title lesson__header_img">
+                    <a href="promo-favorite-time-year.html"> <img src="../../img/close-svgrepo-com.svg" alt="close"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo">
+        <div class="container">
+            <div class="test">
+                <div class="test__phrase test__phrase_ru"></div>
+                <div class="test__phrase test__phrase_en"></div>
+                <div class="test__wrapper"></div>
+                <div class="test__ago">Назад</div>
+            </div>
+        </div>
+    </section>
+
+    <div id="popup" class="popup" style="display:none;">
+        <div class="popup__content">
+            <div id="popupImg" class="popup__img"> </div>
+            <span id="popupMessage"></span>
+        </div>
+    </div>
+
+
+    <script>
+        const phrases = {
+            "My favorite season is fall.": "Мое любимое время года - это осень.",
+            "I love the colors of autumn!": "Мне нравятся краски осени!",
+            "The four seasons are spring, summer, fall and winter.": "Четыре времени года - это весна, лето, осень и зима.",
+            "What's your favorite season?": "Какое у тебя любимое время года?",
+            "My favorite season is spring.": "Мое любимое время года - весна.",
+            "It's sunny and windy. There are lots of flowers.": "Солнечно и ветренно. Вокруг много цветов",
+            "I have five days' vacation.": "У меня 5-дневный отпуск.",
+            "I like the mountains.": "Я люблю горы.",
+            "I love hot weather!": "Я люблю жаркую погоду.",
+            "I go to the beach almost every day.": "Я хожу на пляж почти каждый день.",
+            "That does sound good.": "Это действительно звучит хорошо.",
+            "I like winter.": "Мне нравится зима.",
+            "I don't like hot weather.": "Мне не нравится жаркая погода.",
+            "You're my friend. I like you.": "Ты мой друг. Ты мне нравишься.",
+            "He isn't nice. I don't like him.": "Он не хороший. Он мне не нравится.",
+            "Do you like him?": "Тебе он нравится?",
+            "He doesn't like wet weather. He dislikes rain.": "Он не любит сырую погоду. Ему не нравится дождь.",
+            "She's unfriendly. I dislike her.": "Она неприветливая. Мне она не нравится.",
+            "Does she dislike you?": "Ты ей не нравишься?",
+            "I love the summer. It's my favorite season.": "Я люблю лето. Это мое любимое время года.",
+            "I love my family.": "Я люблю свою семью.",
+            "Do you love me?": "Ты любишь меня?",
+            "She hates the winter. It's cold and wet.": "Она ненавидит зиму. Зимой холодно и сыро.",
+            "Does she hate me?": "Она ненавидит меня.",
+
+        };
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    -->
+    <script src="../../js/swiper.min.js"></script>
+    <script src="../../js/swiper.js"></script>
+    <script src="../../js/swiper-speech.js"></script>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>
