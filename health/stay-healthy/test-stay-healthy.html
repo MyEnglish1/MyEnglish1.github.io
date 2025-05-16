@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Разговорник для путешественников. Разговрник для туристов</title>
+    <meta name="title" content="Разговорник для путешественников. Разговрник для туристово">
+    <meta name="description" content="Разговорник для путешественников. Разговрник для туристов">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="og:description" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="twitter:description" content="Разговорник для путешественников. Разговрник для туристов">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Favicon  -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../icons/favicon//apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../icons/favicon//apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../icons/favicon//apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../icons/favicon//apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../icons/favicon//apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../icons/favicon//apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../icons/favicon//apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../icons/favicon//apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/favicon//apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon//favicon-16x16.png">
+    <link rel="manifest" href="icons/favicon//manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../icons/favicon//ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../../css/style.min.css">
+</head>
+
+<body>
+    <section class="lesson">
+        <div class="lesson__header">
+            <div class="lesson__header_wrapper">
+                <div class="lesson__header_lang">
+                    <div class="lesson__header_right">0</div>
+                    <div class="lesson__header_wrong">0</div>
+                </div>
+                <div class="lesson__header_title lesson__header_img">
+                    <a href="promo-stay-healthy.html"> <img src="../../img/close-svgrepo-com.svg" alt="close"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="promo">
+        <div class="container">
+            <div class="test">
+                <div class="test__phrase test__phrase_ru"></div>
+                <div class="test__phrase test__phrase_en"></div>
+                <div class="test__wrapper"></div>
+                <div class="test__ago">Назад</div>
+            </div>
+        </div>
+    </section>
+
+    <div id="popup" class="popup" style="display:none;">
+        <div class="popup__content">
+            <div id="popupImg" class="popup__img"> </div>
+            <span id="popupMessage"></span>
+        </div>
+    </div>
+
+
+    <script>
+        const phrases = {
+            "How often do you exercise?": "Как часто вы тренируетесь?",
+            "I exercise every day.": "Я тренируюсь каждый день.",
+            "I play video games once a week.": "Я играю в видеоигры раз в неделю.",
+            "She goes on vacation twice a year.": "Она уходит в отпуск два раза в год.",
+            "I eat three times a day.": "Я ем три раза в день.",
+            "He walks to work five times a week.": "Он ходит на работу пять раз в неделю.",
+            "I go on vacation every August.": "Я ухожу в отпуск каждый август.",
+            "I watch TV every day.": "Я смотрю телевизор каждый день.",
+            "I surf the internet once or twice a day.": "Я брожу по интернету один или два раза в день.",
+            "She visits her family three or four times a year.": "Она навещает свою семью три или четыре раза в год.",
+            "They go to the gym about once a month.": "Они ходят в тренажерный зал примерно раз в месяц.",
+            "I exercise two or three times a week.": "Я тренируюсь два или три раза в неделю.",
+            "She goes to the gym about twice a week.": "Она ходит в тренажерный зал примерно два раза в неделю.",
+            "We go to the movies once or twice a month.": "Мы ходим в кино один или два раза в месяц.",
+            "My mom goes on vacation three times a year.": "Моя мама уходит в отпуск три раза в год.",
+            "My dad walks in the park every evening.": "Мой папа гуляет в парке каждый вечер.",
+            "How do you stay healthy?": "Как вы остаетесь здоровым?",
+            "She's in excellent shape.": "Она в отличной форме.",
+            "I'm in good shape.": "Я в хорошей форме.",
+            "He's in bad shape.": "Он в плохой форме.",
+            "John's in terrible shape.": "Джон в ужасной форме."
+        };
+    </script>
+
+
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>
