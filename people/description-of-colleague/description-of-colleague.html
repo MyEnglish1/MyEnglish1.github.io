@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Portfolio</title>
+  <meta name="title" content="Мое портфолио">
+  <meta name="description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metatags.io/">
+  <meta property="og:title" content="Мое портфолио">
+  <meta property="og:description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
+  <meta property="og:image"
+    content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://metatags.io/">
+  <meta property="twitter:title" content="Мое портфолио">
+  <meta property="twitter:description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
+  <meta property="twitter:image"
+    content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+  <!-- Favicon  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../icons/favicon//apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../icons/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../icons/favicon//apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../icons/favicon//apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../icons/favicon//apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../icons/favicon//apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../icons/favicon//apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../icons/favicon//apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../icons/favicon//apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../icons/favicon//android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon//favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon//favicon-16x16.png">
+  <link rel="manifest" href="icons/favicon//manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../icons/favicon//ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../../css/swiper.min.css">
+  <link rel="stylesheet" href="../../css/style.min.css">
+</head>
+
+<body>
+  <section class="lesson">
+    <div class="lesson__header">
+      <div class="lesson__header_wrapper">
+        <div class="lesson__header_title lesson__header_title_change">
+          <img src="../../img/update-alt-svgrepo-com.svg" alt="update">
+        </div>
+        <div class="lesson__header_lang">
+          <button class="btn lesson__header_title lesson__header_title_ru" type="button">
+            <span class="btn__sr">Ru</span>
+          </button>
+          <button class="btn lesson__header_title lesson__header_title_en" type="button">
+            <span class="btn__sr">En</span>
+          </button>
+        </div>
+        <div class="lesson__header_title lesson__header_img"><a href="promo-description-of-colleague.html">
+            <img src="../../img/close-svgrepo-com.svg" alt="close">
+          </a></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="container__center">
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+
+          <script>
+            const phrases = {
+              "hardworking – lazy": "трудолюбивый — ленивый",
+              "intelligent – stupid": "умный — глупый",
+              "serious – funny": "серьёзный — весёлый",
+              "good – bad": "хороший — плохой",
+              "happy – unhappy": "счастливый — несчастливый",
+              "friendly – unfriendly": "дружелюбный — недружелюбный",
+              "I have a question for him.": "У меня есть вопрос к нему.",
+              "She is very friendly to me.": "Она очень дружелюбна ко мне.",
+              "John always comes to Paris with me.": "Джон всегда ездит в Париж со мной.",
+              "I have a question for you.": "У меня есть вопрос к тебе.",
+              "Mary is with him.": "Мери сейчас с ним.",
+              "I am always very friendly to her.": "Я всегда очень дружелюбен к ней.",
+              "He has a big house. Seven people live in it.": "У него большой дом. Там живут семь человек.",
+              "My grandmother lives with us.": "Моя бабушка живёт с нами.",
+              "John is with them.": "Джон сейчас с ними.",
+              "He always goes with me.": "Он всегда ходит со мной.",
+              "They look unhappy to me.": "Мне кажется, что они несчастливы.",
+              "My friend lives with us.": "Мой друг живёт с нами.",
+              "We have a question for him.": "У нас есть вопрос к нему.",
+              "Seven people live in it.": "Там живут семь человек.",
+              "I always go to Beijing with them.": "Я всегда езжу в Пекин с ними.",
+              "She's just always busy.": "Она просто всё время занята.",
+              "She never smiles.": "Она никогда не улыбается.",
+              "She's a really good manager.": "Она очень хороший руководитель.",
+              "What's she like?": "Какая она?",
+              "She's hardworking.": "Она трудолюбива.",
+              "What are they like?": "Какие они?",
+              "They're friendly.": "Они дружелюбны.",
+              "He's lazy.": "Он ленив.",
+              "She's friendly.": "Она дружелюбна.",
+              "They're funny.": "Они весёлые.",
+              "They're always busy.": "Они всегда заняты.",
+              "He always looks unhappy.": "Он всегда кажется несчастливым.",
+              "He has long, black hair.": "У него длинные черные волосы.",
+              "What's he like?": "Что он за человек?",
+              "She's never busy.": "Она никогда не бывает занята.",
+              "Is she tall or short?": "Она большого или маленького роста?",
+              "They're very hardworking.": "Они очень усердны в работе."
+
+            };
+
+          </script>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    -->
+  <script src="../../js/swiper.min.js"></script>
+  <script src="../../js/swiper.js"></script>
+  <script src="../../js/swiper-speech.js"></script>
+  <script src="./../js/script.js"></script>
+</body>
+
+</html>
