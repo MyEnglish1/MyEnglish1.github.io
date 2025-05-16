@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Portfolio</title>
+  <meta name="title" content="Мое портфолио">
+  <meta name="description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metatags.io/">
+  <meta property="og:title" content="Мое портфолио">
+  <meta property="og:description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
+  <meta property="og:image"
+    content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://metatags.io/">
+  <meta property="twitter:title" content="Мое портфолио">
+  <meta property="twitter:description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
+  <meta property="twitter:image"
+    content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+  <!-- Favicon  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../icons/favicon//apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../icons/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../icons/favicon//apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../icons/favicon//apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../icons/favicon//apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../icons/favicon//apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../icons/favicon//apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../icons/favicon//apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../icons/favicon//apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../icons/favicon//android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon//favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon//favicon-16x16.png">
+  <link rel="manifest" href="icons/favicon//manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../icons/favicon//ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../../css/swiper.min.css">
+  <link rel="stylesheet" href="../../css/style.min.css">
+</head>
+
+<body>
+  <section class="lesson">
+    <div class="lesson__header">
+      <div class="lesson__header_wrapper">
+        <div class="lesson__header_title lesson__header_title_change">
+          <img src="../../img/update-alt-svgrepo-com.svg" alt="update">
+        </div>
+        <div class="lesson__header_lang">
+          <button class="btn lesson__header_title lesson__header_title_ru" type="button">
+            <span class="btn__sr">Ru</span>
+          </button>
+          <button class="btn lesson__header_title lesson__header_title_en" type="button">
+            <span class="btn__sr">En</span>
+          </button>
+        </div>
+        <div class="lesson__header_title lesson__header_img">
+          <a href="promo-questions-work.html">
+            <img src="../../img/close-svgrepo-com.svg" alt="close">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="container__center">
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+
+          <script>
+            const phrases = {
+              "I was a banker.": "Я был банкиром.",
+              "He was a computer programmer.": "Он работал программистом.",
+              "She was a supervisor.": "Она работала руководителем.",
+              "It was very difficult.": "Это было очень сложно.",
+              "You were an actor.": "Вы были актером.",
+              "We were designers.": "Мы были дизайнерами.",
+              "They were drivers.": "Они работали водителями.",
+              "He was an illustrator. / Was he an illustrator?": "Он работал иллюстратором. / Он работал иллюстратором?",
+              "They were managers. / Were they managers?": "Они были менеджерами. / Они были менеджерами?",
+              "They weren't managers.": "Они не были менеджерами.",
+              "Were you a supervisor?": "Вы были руководителем?",
+              "Was he a cleaner?": "Он был уборщиком?",
+              "She wasn't an actor.": "Она не была актрисой.",
+              "He was a teacher.": "Он был учителем.",
+              "last": "последний раз",
+              "before": "до",
+              "How long were you there for?": "Сколько времени ты там провёл?",
+              "I was there for eight months.": "Я пробыл там восемь месяцев.",
+              "Last week I was on vacation.": "На прошлой неделе я был в отпуске.",
+              "Where were you last night?": "Где ты был вчера вечером?",
+              "I like my job now, but my last job was terrible!": "Мне нравится моя нынешняя работа, но предыдущая работа была ужасна!",
+              "She was a waiter before she was a supervisor.": "Она была официантом, перед тем как стала начальником.",
+              "She was a supervisor. Before that, she was a waiter.": "Она стала контролёром. До того она была официантом.",
+              "After she was a supervisor, she was the manager.": "После того, как она работала контролёром, она стала менеджером.",
+              "She was a supervisor. After that, she was the manager.": "Она стала контролёром. После этого она стала менеджером.",
+              "How's your job?": "Как тебе работа?",
+              "What's your job like?": "Какая у тебя работа?",
+              "How was your last job?": "Как тебе была твоя последняя работа?",
+              "What was your last job like?": "Какая была ваша последняя работа?",
+              "Where were you before?": "Где вы работали раньше?",
+              "I like my job, but I work too many hours.": "Мне нравится работа, но я работаю слишком много времени.",
+              "The pay is really good in my new job.": "На моей новой работе платят очень хорошо.",
+              "My boss is OK, but sometimes he's difficult.": "С моим шефом всё OK, хотя временами бывает трудно.",
+              "My last job was easier than this job.": "Моя последняя работа была легче, чем эта.",
+              "My pay is better now, but I work longer hours.": "Теперь мне платят лучше, но мой рабочий день стал длиннее.",
+              "I was at LM Computers for only one year.": "Я работал в компании LM Computers всего год.",
+              "My last boss was terrible.": "Мой последний начальник был ужасным."
+
+            };
+
+          </script>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    -->
+  <script src="../../js/swiper.min.js"></script>
+  <script src="../../js/swiper.js"></script>
+  <script src="../../js/swiper-speech.js"></script>
+  <script src="./../js/script.js"></script>
+</body>
+
+</html>
